@@ -10,7 +10,7 @@ public class ThrownProjectile : MonoBehaviour
 
 	[Tooltip("The time before the projectile is removed from the scene")]
 	public float
-		decayTime;
+		decayTime = 5f;
 
 	// Use this for initialization
 	void Start ()

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Throw : MonoBehaviour
+public abstract class Throw : MonoBehaviour
 {
 
 	[Tooltip("The object to be thrown. Should have a ThrownProjectile script to work")]
@@ -20,6 +20,10 @@ public class Throw : MonoBehaviour
 	public float
 		throwAngle;
 
+	[Tooltip("The angular velocity that the projectile is spawned with")]
+	public Vector3
+		angularVelocity;
+
 	//The default direction
 	Vector3 dir;
 
@@ -28,7 +32,7 @@ public class Throw : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -36,8 +40,12 @@ public class Throw : MonoBehaviour
 	{
 		if (Input.GetButtonDown ("Fire1")) {
 			GameObject thrown = Instantiate (projectile);
+
 			thrown.transform.position = cameraObject.transform.position;
-			thrown.GetComponent<Rigidbody> ().velocity = (transform.forward * throwForce);
+
+			thrown.GetComponent<Rigidbody> ().velocity = (transform.forward * throwForce) + new Vector3 (0, throwAngle, 0);
+			thrown.GetComponent<Rigidbody> ().maxAngularVelocity = Mathf.Pow (10, 1000);
+			thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
 		}
 	}
 }
