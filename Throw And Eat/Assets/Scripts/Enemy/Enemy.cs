@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 
 	private bool hasRigidbody = false;
 
@@ -35,51 +36,55 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject dieParticle;
 
-	void OnControllerColliderHit(ControllerColliderHit other) {
-
-		Debug.Log ("OSJDIOSD");
+	void OnControllerColliderHit (ControllerColliderHit other)
+	{
 
 		if (other.gameObject.tag == "Player") {
 			
-			other.gameObject.BroadcastMessage("doDammage", dammage, SendMessageOptions.DontRequireReceiver);
+			other.gameObject.BroadcastMessage ("doDammage", dammage, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
-	void OnCollisionEnter(Collision other) {
+	void OnCollisionEnter (Collision other)
+	{
 
 		if (other.gameObject.tag == "DefaultWeapon") {
 			
-			doDamage(other.gameObject.GetComponent<ThrownProjectile>().dammage);
+			doDamage (other.gameObject.GetComponent<ThrownProjectile> ().dammage);
 
 			other.gameObject.tag = "Untagged";
 		}
 	}
 
-	void Awake() {
+	void Awake ()
+	{
 	
-		characterController = GetComponent<CharacterController>();
+		characterController = GetComponent<CharacterController> ();
 	}
 
-	void Update() {
+	void Update ()
+	{
 
-		healthBar.gameObject.BroadcastMessage("setHealth", health, SendMessageOptions.DontRequireReceiver);
+		healthBar.gameObject.BroadcastMessage ("setHealth", health, SendMessageOptions.DontRequireReceiver);
 
-		move();
+		move ();
 	}
 
-	public void doDamage(float dammage) {
+	public void doDamage (float dammage)
+	{
 
 		health -= dammage;
 
 		if (health <= 0) {
 
-			die();
+			die ();
 		}
 	}
 
-	void move() {
+	void move ()
+	{
 
-		distance = Vector3.Distance(target.transform.position, this.transform.position);
+		distance = Vector3.Distance (target.transform.position, this.transform.position);
 
 		if (!isDead) {
 
@@ -87,14 +92,14 @@ public class Enemy : MonoBehaviour {
 
 			if (hasRigidbody) {
 
-				Destroy(GetComponent<Rigidbody>());
+				Destroy (GetComponent<Rigidbody> ());
 
 				hasRigidbody = false;
 			}
 
 			characterController.enabled = true;
 
-			healthBar.SetActive(true);
+			healthBar.SetActive (true);
 
 			if (distance < maxDistance) {
 				
@@ -103,54 +108,55 @@ public class Enemy : MonoBehaviour {
 					verticalVel = jumpHeight;
 				}
 				
-				rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+				rotation = Quaternion.LookRotation (target.transform.position - transform.position);
 				
-				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, moveSpeed * Time.deltaTime);
+				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, moveSpeed * Time.deltaTime);
 				
 				verticalVel += Physics.gravity.y * Time.deltaTime;		
 				
 				if (distance > minDistance) {
 					
-					speed = new Vector3(0, verticalVel, moveSpeed);
+					speed = new Vector3 (0, verticalVel, moveSpeed);
 					
 				} else {
 					
-					speed = new Vector3(0, verticalVel, 0);
+					speed = new Vector3 (0, verticalVel, 0);
 				}
 				
 				speed = transform.rotation * speed;
 				
-				characterController.Move(speed * Time.deltaTime);
+				characterController.Move (speed * Time.deltaTime);
 			}
 		} else {
 
-			healthBar.SetActive(false);
+			healthBar.SetActive (false);
 
 			verticalVel += Physics.gravity.y * Time.deltaTime;
 
-			speed = new Vector3(0, verticalVel, 0);
+			speed = new Vector3 (0, verticalVel, 0);
 		}
 	}
 
-	void die() {
+	void die ()
+	{
 
 		isDead = true;
 
-		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-90, transform.rotation.y, 0), moveSpeed * Time.deltaTime);
+		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (-90, transform.rotation.y, 0), moveSpeed * Time.deltaTime);
 
 		characterController.enabled = false;
 
 		if (!hasRigidbody) {
 
-			this.gameObject.AddComponent<Rigidbody>();
+			this.gameObject.AddComponent<Rigidbody> ();
 
-			Destroy(this.GetComponent<CapsuleCollider>());
+			Destroy (this.GetComponent<CapsuleCollider> ());
 
 			hasRigidbody = true;
 		}
 
 		graphicsCookie.gameObject.tag = "Cookie";
 
-		Instantiate(dieParticle, transform.position, Quaternion.identity);
+		Instantiate (dieParticle, transform.position, Quaternion.identity);
 	}
 }
