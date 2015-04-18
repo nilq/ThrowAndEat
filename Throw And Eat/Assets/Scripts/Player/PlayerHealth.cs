@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Update() {
 
-		healthBar.transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
+		healthBar.transform.localScale = new Vector3(health * 0.01F, transform.localScale.y, transform.localScale.z);
 	}
 
 	public void doDammage(float dammage) {

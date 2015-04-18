@@ -8,10 +8,6 @@ public abstract class Throw : MonoBehaviour
 	public GameObject
 		projectile;
 
-	[Tooltip("The camera or object pointing the right default direction")]
-	public GameObject
-		cameraObject;
-
 	[Tooltip("The amount of force to apply to the weapon upon launch")]
 	public float
 		throwForce;
@@ -39,11 +35,12 @@ public abstract class Throw : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetButtonDown ("Fire1")) {
+
 			GameObject thrown = Instantiate (projectile);
 
-			thrown.transform.position = cameraObject.transform.position;
+			thrown.transform.position = Camera.main.transform.position;
 
-			thrown.GetComponent<Rigidbody> ().velocity = (transform.forward * throwForce) + new Vector3 (0, throwAngle, 0);
+			thrown.GetComponent<Rigidbody> ().velocity = (Camera.main.transform.forward * throwForce) + new Vector3 (0, throwAngle, 0);
 			thrown.GetComponent<Rigidbody> ().maxAngularVelocity = Mathf.Pow (10, 1000);
 			thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
 		}

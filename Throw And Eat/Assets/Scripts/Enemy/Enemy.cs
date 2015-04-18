@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
+	private bool hasRigidbody = false;
+
 	private float verticalVel = 0;
 
 	private Quaternion rotation;
@@ -18,6 +20,8 @@ public class Enemy : MonoBehaviour {
 	public float dammage;
 
 	public float health = 5.0F;
+
+	public GameObject graphicsCookie;
 
 	public float moveSpeed;
 	public float jumpHeight;
@@ -37,14 +41,20 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision other) {
+		
+		if (other.gameObject.tag == "DefaultWeapon") {
+			
+			doDamage(other.gameObject.GetComponent<ThrownProjectile>().dammage);
+		}
+	}
+
 	void Awake() {
 	
 		characterController = GetComponent<CharacterController>();
 	}
 
 	void Update() {
-
-		//doDamage(0.7F);
 
 		healthBar.gameObject.BroadcastMessage("setHealth", health, SendMessageOptions.DontRequireReceiver);
 
@@ -67,7 +77,14 @@ public class Enemy : MonoBehaviour {
 
 		if (!isDead) {
 
-			Destroy(GetComponent<Rigidbody>());
+			graphicsCookie.gameObject.tag = "Untagged";
+
+			if (hasRigidbody) {
+
+				Destroy(GetComponent<Rigidbody>());
+
+				hasRigidbody = false;
+			}
 
 			characterController.enabled = true;
 
@@ -117,6 +134,15 @@ public class Enemy : MonoBehaviour {
 
 		characterController.enabled = false;
 
-		this.gameObject.AddComponent<Rigidbody>();
+		if (!hasRigidbody) {
+
+			this.gameObject.AddComponent<Rigidbody>();
+
+			Destroy(this.GetComponent<CapsuleCollider>());
+
+			hasRigidbody = true;
+		}
+
+		graphicsCookie.gameObject.tag = "Cookie";
 	}
 }

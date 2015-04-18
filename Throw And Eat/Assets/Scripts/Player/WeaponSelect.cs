@@ -42,7 +42,6 @@ public class WeaponSelect : MonoBehaviour
 			Destroy (currentWeapon);
 			currentWeapon = Instantiate (weapon1);
 			currentWeapon.transform.parent = transform;
-			currentWeapon.GetComponent<Throw> ().cameraObject = mainCameraObject;
 			currentWeapon.transform.localPosition = new Vector3 (0.331f, -0.204f, 0.411f);
 
 		}
@@ -50,7 +49,6 @@ public class WeaponSelect : MonoBehaviour
 			Destroy (currentWeapon);
 			currentWeapon = Instantiate (weapon2);
 			currentWeapon.transform.parent = transform;
-			currentWeapon.GetComponent<Throw> ().cameraObject = mainCameraObject;
 			currentWeapon.transform.localPosition = new Vector3 (0.331f, -0.204f, 0.411f);
 			
 		}
@@ -58,7 +56,6 @@ public class WeaponSelect : MonoBehaviour
 			Destroy (currentWeapon);
 			currentWeapon = Instantiate (weapon3);
 			currentWeapon.transform.parent = transform;
-			currentWeapon.GetComponent<Throw> ().cameraObject = mainCameraObject;
 			currentWeapon.transform.localPosition = new Vector3 (0.331f, -0.204f, 0.411f);
 			
 		}
@@ -66,7 +63,6 @@ public class WeaponSelect : MonoBehaviour
 			Destroy (currentWeapon);
 			currentWeapon = Instantiate (weapon4);
 			currentWeapon.transform.parent = transform;
-			currentWeapon.GetComponent<Throw> ().cameraObject = mainCameraObject;
 			currentWeapon.transform.localPosition = new Vector3 (0.331f, -0.204f, 0.411f);
 			
 		}
