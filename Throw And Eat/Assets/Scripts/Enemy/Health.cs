@@ -7,7 +7,7 @@ public class Health : MonoBehaviour {
 
 	void Update() {
 	
-		transform.localScale = new Vector3(health * 0.001F, 0.04F, 0.04F);
+		transform.localScale = new Vector3(health * 0.001F, transform.localScale.y, transform.localScale.z);
 	}
 
 	public void setHealth(float health) {
