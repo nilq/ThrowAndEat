@@ -18,9 +18,4 @@ public class ThrownProjectile : MonoBehaviour
 		this.gameObject.tag = "DefaultWeapon";
 		Destroy (gameObject, decayTime);
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	}
 }

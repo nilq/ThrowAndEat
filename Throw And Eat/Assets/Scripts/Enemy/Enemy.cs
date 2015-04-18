@@ -33,7 +33,11 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject target;
 
+	public GameObject dieParticle;
+
 	void OnControllerColliderHit(ControllerColliderHit other) {
+
+		Debug.Log ("OSJDIOSD");
 
 		if (other.gameObject.tag == "Player") {
 			
@@ -42,10 +46,12 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other) {
-		
+
 		if (other.gameObject.tag == "DefaultWeapon") {
 			
 			doDamage(other.gameObject.GetComponent<ThrownProjectile>().dammage);
+
+			other.gameObject.tag = "Untagged";
 		}
 	}
 
@@ -144,5 +150,7 @@ public class Enemy : MonoBehaviour {
 		}
 
 		graphicsCookie.gameObject.tag = "Cookie";
+
+		Instantiate(dieParticle, transform.position, Quaternion.identity);
 	}
 }

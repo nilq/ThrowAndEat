@@ -4,6 +4,8 @@ using System.Collections;
 public abstract class Throw : MonoBehaviour
 {
 
+	private float startDelay;
+
 	[Tooltip("The object to be thrown. Should have a ThrownProjectile script to work")]
 	public GameObject
 		projectile;
@@ -15,6 +17,10 @@ public abstract class Throw : MonoBehaviour
 	[Tooltip("The angle at which the object is thrown")]
 	public float
 		throwAngle;
+
+	[Tooltip("Delay between throws in seconds")]
+	public float 
+		delay;
 
 	[Tooltip("The angular velocity that the projectile is spawned with")]
 	public Vector3
@@ -28,21 +34,28 @@ public abstract class Throw : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		
+		startDelay = delay;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Fire1")) {
+		delay -= Time.deltaTime;
 
-			GameObject thrown = Instantiate (projectile);
+		if (Input.GetButton ("Fire1")) {
 
-			thrown.transform.position = Camera.main.transform.position;
+			if (delay <= 0) {
 
-			thrown.GetComponent<Rigidbody> ().velocity = (Camera.main.transform.forward * throwForce) + new Vector3 (0, throwAngle, 0);
-			thrown.GetComponent<Rigidbody> ().maxAngularVelocity = Mathf.Pow (10, 1000);
-			thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
+				GameObject thrown = Instantiate (projectile);
+				
+				thrown.transform.position = Camera.main.transform.position;
+				
+				thrown.GetComponent<Rigidbody> ().velocity = (Camera.main.transform.forward * throwForce) + new Vector3 (0, throwAngle, 0);
+				thrown.GetComponent<Rigidbody> ().maxAngularVelocity = Mathf.Pow (10, 1000);
+				thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
+
+				delay = startDelay;
+			}
 		}
 	}
 }

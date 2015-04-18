@@ -222,12 +222,13 @@ MonoBehaviour:
   dammage: 1
   health: 100
   graphicsCookie: {fileID: 177368}
-  moveSpeed: 2
+  moveSpeed: 3.5
   jumpHeight: 2
   maxDistance: 100
   minDistance: 1
   healthBar: {fileID: 138548}
   target: {fileID: 0}
+  dieParticle: {fileID: 0}
 --- !u!143 &14356550
 CharacterController:
   m_ObjectHideFlags: 1
