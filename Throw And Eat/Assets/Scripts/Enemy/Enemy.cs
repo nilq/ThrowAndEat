@@ -13,9 +13,9 @@ public class Enemy : MonoBehaviour {
 
 	private CharacterController characterController;
 
-	private Rigidbody rigidbody;
-
 	public bool isDead = false;
+
+	public float dammage;
 
 	public float health = 5.0F;
 
@@ -29,16 +29,22 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject target;
 
+	void OnControllerColliderHit(ControllerColliderHit other) {
+
+		if (other.gameObject.tag == "Player") {
+			
+			other.gameObject.BroadcastMessage("doDammage", dammage, SendMessageOptions.DontRequireReceiver);
+		}
+	}
+
 	void Awake() {
 	
 		characterController = GetComponent<CharacterController>();
-
-		rigidbody = GetComponent<Rigidbody>();
 	}
 
 	void Update() {
 
-		doDamage(0.7F);
+		//doDamage(0.7F);
 
 		healthBar.gameObject.BroadcastMessage("setHealth", health, SendMessageOptions.DontRequireReceiver);
 
@@ -61,7 +67,7 @@ public class Enemy : MonoBehaviour {
 
 		if (!isDead) {
 
-			rigidbody.useGravity = false;
+			Destroy(GetComponent<Rigidbody>());
 
 			characterController.enabled = true;
 
@@ -111,6 +117,6 @@ public class Enemy : MonoBehaviour {
 
 		characterController.enabled = false;
 
-		rigidbody.useGravity = true;
+		this.gameObject.AddComponent<Rigidbody>();
 	}
 }

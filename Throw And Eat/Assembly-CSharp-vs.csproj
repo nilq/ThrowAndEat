@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\Health.cs" />
      <Compile Include="Assets\Scripts\Player\Controller.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Player\Throw.cs" />
      <Compile Include="Assets\Scripts\Player\ThrowSimpleGun.cs" />
      <Compile Include="Assets\Scripts\Player\WeaponSelect.cs" />
