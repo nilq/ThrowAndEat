@@ -15,7 +15,7 @@ public class Controller : MonoBehaviour {
 
 	private CharacterController characterController;
 
-	public float movSpeed = 8.0F;
+	public float moveSpeed = 8.0F;
 	public float mouseSensitivity = 2.0F;
 	public float verticalRotRange = 60.0F;
 	public float jumpHeight = 5.0F;
@@ -34,11 +34,10 @@ public class Controller : MonoBehaviour {
 				
 		verticalRot = Mathf.Clamp(verticalRot, -verticalRotRange, verticalRotRange);
 				
-		Camera.main.transform.localRotation = Quaternion.Euler (verticalRot, 0, 0);
+		Camera.main.transform.localRotation = Quaternion.Euler(verticalRot, 0, 0);
 				
-				
-		forwardSpeed = Input.GetAxis("Vertical") * movSpeed;
-		sidewaysSpeed = Input.GetAxis("Horizontal") * movSpeed;
+		forwardSpeed = Input.GetAxis("Vertical") * moveSpeed;
+		sidewaysSpeed = Input.GetAxis("Horizontal") * moveSpeed;
 				
 		if (Input.GetButton("Jump") && characterController.isGrounded) {
 
