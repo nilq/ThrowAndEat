@@ -1,21 +1,12 @@
-# ThrowAndEat
+=== About ===
 Throw and eat people. Talk later.
 
-TODO: 
----
-THE TOY:
-X A character controller
-X Throwing weapons
-X An enemy to kill
-* An enemy corpse to eat
+=== TODO ===
+https://trello.com/b/Si3jCPjt/ludumdare-32-at-isotop
 
-Next on the list:
-X A handgun of sorts
-X An old flintlock
-X A rocket laucher
-X A ginger-bread man
-X Switching weapons
-* Ammo- and weapon pickup
-* Some sort of map
--or-
-* Some sort of arena
+=== unity weirdness ===
+
+Lighting changes on Application.LoadLevel (after death)
+Disable "Continuous Baking" and manually bake, 
+(Window>Lighting>Scene tab, at the bottom)
+
