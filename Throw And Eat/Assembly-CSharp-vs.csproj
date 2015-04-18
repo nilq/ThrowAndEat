@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Health.cs" />
      <Compile Include="Assets\Scripts\Player\Controller.cs" />
+     <Compile Include="Assets\Scripts\Player\Throw.cs" />
+     <Compile Include="Assets\Scripts\ThrownProjectile.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Application/Unity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

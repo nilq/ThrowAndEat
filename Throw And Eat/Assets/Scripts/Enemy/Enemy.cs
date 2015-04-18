@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-
+	
 	private float verticalVel = 0;
 
 	private Quaternion rotation;
@@ -13,11 +13,15 @@ public class Enemy : MonoBehaviour {
 
 	private CharacterController characterController;
 
+	public float health = 5.0F;
+
 	public float moveSpeed;
 	public float jumpHeight;
 
 	public float maxDistance;
 	public float minDistance;
+
+	public GameObject healthBar;
 
 	public GameObject target;
 
@@ -28,10 +32,24 @@ public class Enemy : MonoBehaviour {
 
 	void Update() {
 
+		doDamage(0.5F);
+
+		healthBar.gameObject.BroadcastMessage("setHealth", health, SendMessageOptions.DontRequireReceiver);
+
 		move();
 	}
 
-	public void move() {
+	public void doDamage(float dammage) {
+
+		health -= dammage;
+
+		if (health <= 0) {
+
+			die();
+		}
+	}
+
+	void move() {
 
 		distance = Vector3.Distance(target.transform.position, this.transform.position);
 		
@@ -61,5 +79,10 @@ public class Enemy : MonoBehaviour {
 			
 			characterController.Move(speed * Time.deltaTime);
 		}
+	}
+
+	void die() {
+
+		Destroy(this.gameObject);
 	}
 }
