@@ -869,6 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c504fe966be9b0489511654c1792fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   moveSpeed: 8
   mouseSensitivity: 2
   verticalRotRange: 60

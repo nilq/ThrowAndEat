@@ -6,4 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Copy of Main.unity
+=======
+    path: Assets/Scenes/arena.unity
+>>>>>>> a5fcf7c5b151a2029da9773d0877b33d54ad5967
