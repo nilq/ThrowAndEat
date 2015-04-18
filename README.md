@@ -4,12 +4,18 @@ Throw and eat people. Talk later.
 TODO: 
 ---
 THE TOY:
-* A character controller
+X A character controller
 X Throwing weapons
-* An enemy to kill
+X An enemy to kill
 * An enemy corpse to eat
 
 Next on the list:
-* Switching weapons
+X A handgun of sorts
+X An old flintlock
+X A rocket laucher
+X A ginger-bread man
+X Switching weapons
 * Ammo- and weapon pickup
-* 
+* Some sort of map
+-or-
+* Some sort of arena
