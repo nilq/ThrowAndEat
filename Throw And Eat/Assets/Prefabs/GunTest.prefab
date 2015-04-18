@@ -1,48 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &181062
+--- !u!1 &158206
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 436452}
-  - 33: {fileID: 3323934}
-  - 65: {fileID: 6541702}
-  - 23: {fileID: 2384294}
-  - 54: {fileID: 5403802}
-  - 114: {fileID: 11490674}
-  m_Layer: 0
-  m_Name: ThrownCube
+  - 4: {fileID: 451268}
+  - 33: {fileID: 3334822}
+  - 65: {fileID: 6583194}
+  - 23: {fileID: 2353378}
+  - 114: {fileID: 11420160}
+  m_Layer: 8
+  m_Name: GunTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &436452
+--- !u!4 &451268
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .150000006, y: .300000012, z: .150000006}
+  m_GameObject: {fileID: 158206}
+  m_LocalRotation: {x: 0, y: .197047785, z: 0, w: .980393946}
+  m_LocalPosition: {x: .331, y: -.203999996, z: .411000013}
+  m_LocalScale: {x: .200000018, y: .200000003, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2384294
+--- !u!23 &2353378
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181062}
+  m_GameObject: {fileID: 158206}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 776e58bccb5677b429f881c2b1e0fc72, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -56,53 +55,41 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3323934
+--- !u!33 &3334822
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181062}
+  m_GameObject: {fileID: 158206}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5403802
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181062}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &6541702
+--- !u!65 &6583194
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181062}
+  m_GameObject: {fileID: 158206}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11490674
+--- !u!114 &11420160
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181062}
+  m_GameObject: {fileID: 158206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0e59aa57dada924b8cbdd22eff0506a, type: 3}
+  m_Script: {fileID: 11500000, guid: 677d6be71a431074c931ee1cf401d6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  decayTime: 5
+  projectile: {fileID: 181062, guid: 80d08a01922589842b81be10b2f1aa1b, type: 2}
+  cameraObject: {fileID: 0}
+  throwForce: 10
+  throwAngle: 5
+  angularVelocity: {x: 20, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -112,5 +99,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 181062}
+  m_RootGameObject: {fileID: 158206}
   m_IsPrefabParent: 1
