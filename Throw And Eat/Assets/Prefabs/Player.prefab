@@ -124,7 +124,7 @@ MonoBehaviour:
   player: {fileID: 187666}
   breadcrumbs: {fileID: 137426, guid: 30f224fc0116f714e85533436123e7a7, type: 2}
   healthHealed: 10
-  eatTime: 3
+  eatTime: 2.5
   maxDist: 4
 --- !u!114 &11470002
 MonoBehaviour:
