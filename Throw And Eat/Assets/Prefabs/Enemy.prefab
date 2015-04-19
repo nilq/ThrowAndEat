@@ -750,6 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   dammage: 1
+  antiSwarmDammage: 0
   health: 100
   graphicsCookie: {fileID: 138204}
   moveSpeed: 3.5

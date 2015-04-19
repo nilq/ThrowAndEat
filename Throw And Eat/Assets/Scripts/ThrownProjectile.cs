@@ -12,7 +12,6 @@ public class ThrownProjectile : MonoBehaviour
 	public float
 		decayTime = 5f;
 
-	// Use this for initialization
 	void Start ()
 	{
 		this.gameObject.tag = "DefaultWeapon";

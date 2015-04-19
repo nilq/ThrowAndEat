@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
-{
+public class Enemy : MonoBehaviour {
 
 	private bool hasRigidbody = false;
 
@@ -20,6 +19,8 @@ public class Enemy : MonoBehaviour
 
 	public float dammage;
 
+	public float antiSwarmDammage;
+
 	public float health = 5.0F;
 
 	public GameObject graphicsCookie;
@@ -36,16 +37,17 @@ public class Enemy : MonoBehaviour
 
 	public GameObject dieParticle;
 
-	void OnControllerColliderHit (ControllerColliderHit other)
-	{
+	void OnControllerColliderHit (ControllerColliderHit other) {
+
 		if (other.gameObject.tag == "Player") {
 			
 			other.gameObject.BroadcastMessage ("doDammage", dammage, SendMessageOptions.DontRequireReceiver);
+
+			doDamage(antiSwarmDammage);
 		}
 	}
 
-	void OnCollisionEnter (Collision other)
-	{
+	void OnCollisionEnter (Collision other) {
 
 		if (other.gameObject.tag == "DefaultWeapon") {
 			
@@ -55,22 +57,19 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-	void Awake ()
-	{
+	void Awake () {
 	
 		characterController = GetComponent<CharacterController> ();
 	}
 
-	void Update ()
-	{
+	void Update () {
 
 		healthBar.gameObject.BroadcastMessage ("setHealth", health, SendMessageOptions.DontRequireReceiver);
 
 		move ();
 	}
 
-	public void doDamage (float dammage)
-	{
+	public void doDamage (float dammage) {
 
 		health -= dammage;
 
@@ -80,8 +79,7 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-	void move ()
-	{
+	void move () {
 
 		distance = Vector3.Distance (target.transform.position, this.transform.position);
 
@@ -125,6 +123,7 @@ public class Enemy : MonoBehaviour
 				speed = transform.rotation * speed;
 				
 				characterController.Move (speed * Time.deltaTime);
+			
 			}
 		} else {
 
@@ -136,8 +135,7 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-	void die ()
-	{
+	void die () {
 
 		isDead = true;
 

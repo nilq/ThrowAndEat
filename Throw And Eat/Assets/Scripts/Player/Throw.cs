@@ -97,6 +97,10 @@ public abstract class Throw : MonoBehaviour {
 
 		delay -= Time.deltaTime;
 
+		ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
+		ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
+		ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
+
 		if (Input.GetButton ("Fire1")) {
 
 			ammo[0] = ammoObject.ammo[0];
@@ -134,6 +138,10 @@ public abstract class Throw : MonoBehaviour {
 						thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
 						
 						ammoObject.ammo[1] -= 1;
+
+						ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
+						ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
+						ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
 					}
 				} else if (projectile.gameObject.name == "RocketLauncher") {
 				
@@ -148,6 +156,10 @@ public abstract class Throw : MonoBehaviour {
 						thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
 						
 						ammoObject.ammo[2] -= 1;
+
+						ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
+						ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
+						ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
 					}
 				}
 

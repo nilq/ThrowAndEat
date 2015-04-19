@@ -210,7 +210,7 @@ MonoBehaviour:
   projectile: {fileID: 188274, guid: 767719968f736174a9caa35a1a031295, type: 2}
   throwForce: 10
   throwAngle: 5
-  delay: .600000024
+  delay: .400000006
   angularVelocity: {x: 20, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

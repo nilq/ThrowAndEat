@@ -207,10 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677d6be71a431074c931ee1cf401d6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 198636, guid: d1dd77eb964de0b40aca7b9abb213f37, type: 2}
+  projectile: {fileID: 198636, guid: d93aca942d2e2cd40b93ace8ff535afc, type: 2}
   throwForce: 10
   throwAngle: 5
-  delay: .600000024
+  delay: .800000012
   angularVelocity: {x: 20, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

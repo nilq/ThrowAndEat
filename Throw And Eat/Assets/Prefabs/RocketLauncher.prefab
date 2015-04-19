@@ -26,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 438068}
   - 95: {fileID: 9553472}
+  - 65: {fileID: 6528284}
   m_Layer: 0
   m_Name: rocket launcher model
   m_TagString: Untagged
@@ -61,6 +62,7 @@ GameObject:
   - 65: {fileID: 6527900}
   - 54: {fileID: 5430674}
   - 114: {fileID: 11453478}
+  - 114: {fileID: 11436580}
   m_Layer: 0
   m_Name: RocketLauncher
   m_TagString: Untagged
@@ -208,6 +210,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .129999995, y: .360000014, z: 1.88}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6528284
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9553472
 Animator:
   serializedVersion: 3
@@ -225,6 +239,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11436580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22861b14727f354fb8289f8439ebaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 137426, guid: 30f224fc0116f714e85533436123e7a7, type: 2}
 --- !u!114 &11453478
 MonoBehaviour:
   m_ObjectHideFlags: 1
