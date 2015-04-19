@@ -427,80 +427,6 @@ Transform:
   - {fileID: 615561411}
   m_Father: {fileID: 162457531}
   m_RootOrder: 1
---- !u!1 &180990115
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 180990116}
-  - 23: {fileID: 180990118}
-  - 102: {fileID: 180990117}
-  m_Layer: 0
-  m_Name: revenge
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &180990116
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180990115}
-  m_LocalRotation: {x: 0, y: .995193303, z: 0, w: .097930178}
-  m_LocalPosition: {x: 117.599998, y: -3.29999995, z: 67.0999985}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1179835671}
-  m_RootOrder: 2
---- !u!102 &180990117
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180990115}
-  m_Text: revenge your lost friend
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190080
---- !u!23 &180990118
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180990115}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!1 &185662152
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1179835671}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!1001 &245852112
 Prefab:
   m_ObjectHideFlags: 0
@@ -706,7 +632,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a3fc127e8c7b3846bcb51e9c8baee70, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &245852113 stripped
+--- !u!4 &245852113
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 6a3fc127e8c7b3846bcb51e9c8baee70, type: 3}
   m_PrefabInternal: {fileID: 245852112}
@@ -947,7 +873,7 @@ Transform:
   - {fileID: 1416840409}
   - {fileID: 1985312384}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!143 &598248104
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1040,84 +966,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37901d8626ff8154d8bc649cad786c35, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &600105548 stripped
+--- !u!4 &600105548
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 37901d8626ff8154d8bc649cad786c35, type: 3}
   m_PrefabInternal: {fileID: 600105547}
---- !u!1 &607864914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 607864917}
-  - 23: {fileID: 607864916}
-  - 102: {fileID: 607864915}
-  m_Layer: 0
-  m_Name: quest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!102 &607864915
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 607864914}
-  m_Text: Horrible cookies attack you and kill your ...
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190080
---- !u!23 &607864916
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 607864914}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!4 &607864917
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 607864914}
-  m_LocalRotation: {x: 0, y: .340459049, z: 0, w: .940259397}
-  m_LocalPosition: {x: 21.8999996, y: -8.60000038, z: 90.3000031}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1179835671}
-  m_RootOrder: 1
 --- !u!1 &615561410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1165,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 779fb956530f15743bb8df03a94e7a98, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &629474194 stripped
+--- !u!4 &629474194
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 779fb956530f15743bb8df03a94e7a98, type: 3}
   m_PrefabInternal: {fileID: 629474193}
@@ -1544,7 +1396,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 779fb956530f15743bb8df03a94e7a98, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &889692155 stripped
+--- !u!4 &889692155
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 779fb956530f15743bb8df03a94e7a98, type: 3}
   m_PrefabInternal: {fileID: 889692154}
@@ -1623,7 +1475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
 --- !u!1 &922388441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1504,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1179835671}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!102 &922388443
 TextMesh:
   serializedVersion: 3
@@ -1746,7 +1598,7 @@ Transform:
   m_Children:
   - {fileID: 1802388143}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &923236409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,7 +1747,7 @@ Transform:
   - {fileID: 103854833}
   m_Father: {fileID: 162457531}
   m_RootOrder: 0
---- !u!1 &1084616729 stripped
+--- !u!1 &1084616729
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 6a3fc127e8c7b3846bcb51e9c8baee70, type: 3}
   m_PrefabInternal: {fileID: 245852112}
@@ -1948,8 +1800,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455176074}
-  - {fileID: 607864917}
-  - {fileID: 180990116}
   - {fileID: 922388442}
   - {fileID: 243949934}
   m_Father: {fileID: 0}
@@ -1989,7 +1839,7 @@ Terrain:
   m_GameObject: {fileID: 1233507104}
   m_Enabled: 1
   serializedVersion: 3
-  m_TerrainData: {fileID: 15600000, guid: 7aafd3202856288459605db5e42408ef, type: 2}
+  m_TerrainData: {fileID: 0}
   m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -2008,6 +1858,8 @@ Terrain:
     serializedVersion: 2
     rgba: 4286545791
   m_LegacyShininess: .078125
+  m_UseDefaultSmoothness: 1
+  m_DefaultSmoothness: 0
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: .0511999987
@@ -2024,7 +1876,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
---- !u!1 &1289971976 stripped
+--- !u!1 &1289971976
 GameObject:
   m_PrefabParentObject: {fileID: 107920, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
   m_PrefabInternal: {fileID: 1312304466}
@@ -2249,7 +2101,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.7143507, y: .940032899, z: 10.8242426}
   m_Center: {x: 2.50339599e-06, y: -.00074544613, z: -5.42588711}
---- !u!1 &1501568988 stripped
+--- !u!1 &1501568988
 GameObject:
   m_PrefabParentObject: {fileID: 170650, guid: 923f69360aabdef4a9d15d2aad39d480, type: 2}
   m_PrefabInternal: {fileID: 1977769719}
