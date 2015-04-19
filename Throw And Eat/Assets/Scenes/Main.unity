@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   dammage: 1
+  antiSwarmDammage: 0
   health: 100
   graphicsCookie: {fileID: 1416840408}
   moveSpeed: 2
@@ -184,6 +185,7 @@ MonoBehaviour:
   minDistance: 1
   healthBar: {fileID: 992940128}
   target: {fileID: 923236405}
+  dieParticle: {fileID: 0}
 --- !u!1 &908916108
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c504fe966be9b0489511654c1792fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   moveSpeed: 8
   mouseSensitivity: 2
   verticalRotRange: 60
