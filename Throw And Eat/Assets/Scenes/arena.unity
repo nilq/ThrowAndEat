@@ -14,8 +14,8 @@ SceneSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
-  m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: .539305806, g: .617960334, b: .772058845, a: 1}
   m_FogMode: 3
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
@@ -1276,7 +1276,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22494394, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 22494394, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1324,7 +1324,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22492874, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 750
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22492874, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -1340,6 +1340,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22492874, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444900, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444900, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
+      propertyPath: m_Color.g
+      value: .720588207
+      objectReference: {fileID: 0}
+    - target: {fileID: 11444900, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
+      propertyPath: m_Color.b
+      value: .213691667
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492874, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22492874, guid: 08dda3e9681c4ac4e8c565b8737c81d1, type: 2}
+      propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

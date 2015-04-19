@@ -555,12 +555,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  dammage: 1
+  dammage: 10
   antiSwarmDammage: 0
-  health: 100
+  health: 1000
   graphicsCookie: {fileID: 156830}
-  moveSpeed: 2
-  jumpHeight: 2
+  moveSpeed: 5
+  jumpHeight: 3
   maxDistance: 100
   minDistance: 1
   healthBar: {fileID: 100808}
