@@ -1657,6 +1657,33 @@ Transform:
   - {fileID: 103854833}
   m_Father: {fileID: 162457531}
   m_RootOrder: 0
+--- !u!1 &1084616729 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 6a3fc127e8c7b3846bcb51e9c8baee70, type: 3}
+  m_PrefabInternal: {fileID: 245852112}
+--- !u!114 &1084616730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1084616729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc5f576a75e4e240b45b290499e041a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  dammage: 10
+  antiSwarmDammage: 10
+  health: 700
+  graphicsCookie: {fileID: 0}
+  moveSpeed: 10
+  jumpHeight: 5
+  maxDistance: 1000
+  minDistance: 1
+  healthBar: {fileID: 1501568988}
+  target: {fileID: 923236405}
+  dieParticle: {fileID: 0}
 --- !u!1 &1179835670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2011,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.7143507, y: .940032899, z: 10.8242426}
   m_Center: {x: 2.50339599e-06, y: -.00074544613, z: -5.42588711}
+--- !u!1 &1501568988 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 170650, guid: 923f69360aabdef4a9d15d2aad39d480, type: 2}
+  m_PrefabInternal: {fileID: 1977769719}
 --- !u!1 &1519146971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,8 +2387,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1901960002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.66848946, y: -3.51336002, z: 11.878974}
+  m_LocalRotation: {x: 0, y: .122595936, z: 0, w: .992456675}
+  m_LocalPosition: {x: 72.4000015, y: -3.4000001, z: -40.2000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 600105548}
