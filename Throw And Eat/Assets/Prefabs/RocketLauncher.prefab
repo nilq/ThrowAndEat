@@ -247,10 +247,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 198636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d22861b14727f354fb8289f8439ebaea, type: 3}
+  m_Script: {fileID: 11500000, guid: 1742bf71af3ccf84093c6acb7e3fbad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 137426, guid: 30f224fc0116f714e85533436123e7a7, type: 2}
+  explosion: {fileID: 167302, guid: 4d342f0dce26c95499b50331ad59a601, type: 2}
+  delay: 1
+  radius: 4
+  damage: 50
 --- !u!114 &11453478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e59aa57dada924b8cbdd22eff0506a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dammage: 30
+  dammage: 0
   decayTime: 5
 --- !u!1001 &100100000
 Prefab:

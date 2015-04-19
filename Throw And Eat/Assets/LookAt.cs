@@ -5,7 +5,13 @@ public class LookAt : MonoBehaviour {
 
 	public GameObject target;
 
-	void Update () {
+	void Awake() {
+
+		target = GameObject.FindGameObjectWithTag("Player");
+	}
+
+	void Update() {
+
 		transform.LookAt(target.transform);
 	}
 }

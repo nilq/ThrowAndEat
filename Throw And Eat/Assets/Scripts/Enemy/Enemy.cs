@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
+	private bool shallHaveRigidbody = true;
+
 	private bool hasRigidbody = false;
 
 	private float verticalVel = 0;
@@ -41,9 +43,9 @@ public class Enemy : MonoBehaviour {
 
 		if (other.gameObject.tag == "Player") {
 			
-			other.gameObject.BroadcastMessage ("doDammage", dammage, SendMessageOptions.DontRequireReceiver);
+			other.gameObject.BroadcastMessage ("doDammage", (dammage * 4) * Time.deltaTime, SendMessageOptions.DontRequireReceiver);
 
-			doDamage(antiSwarmDammage);
+			doDamage((antiSwarmDammage * 30) * Time.deltaTime);
 		}
 	}
 
@@ -55,11 +57,39 @@ public class Enemy : MonoBehaviour {
 
 			other.gameObject.tag = "Untagged";
 		}
+
+		if (other.gameObject.tag != "Enemy") {
+
+			if (other.gameObject.tag != "Cookie") {
+
+				if (shallHaveRigidbody) {
+
+					if (hasRigidbody) {
+						
+						Destroy(this.GetComponent<Rigidbody>());
+						
+						hasRigidbody = false;
+					}
+				}
+			}
+		}
 	}
 
 	void Awake () {
+
+		target = GameObject.FindGameObjectWithTag("Player");
 	
 		characterController = GetComponent<CharacterController> ();
+
+		if (!hasRigidbody) {
+
+			if (shallHaveRigidbody) {
+
+				this.gameObject.AddComponent<Rigidbody> ();
+
+				hasRigidbody = true;
+			}
+		}
 	}
 
 	void Update () {
@@ -89,9 +119,12 @@ public class Enemy : MonoBehaviour {
 
 			if (hasRigidbody) {
 
-				Destroy (GetComponent<Rigidbody> ());
+				if (!shallHaveRigidbody) {
 
-				hasRigidbody = false;
+					Destroy(GetComponent<Rigidbody> ());
+					
+					hasRigidbody = false;
+				}
 			}
 
 			characterController.enabled = true;
@@ -139,18 +172,17 @@ public class Enemy : MonoBehaviour {
 
 		isDead = true;
 
+		shallHaveRigidbody = true;
+
+		this.gameObject.AddComponent<Rigidbody> ();
+
+		Destroy (this.GetComponent<CapsuleCollider> ());
+		
+		hasRigidbody = true;
+
 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (-90, transform.rotation.y, 0), moveSpeed * Time.deltaTime);
 
 		characterController.enabled = false;
-
-		if (!hasRigidbody) {
-
-			this.gameObject.AddComponent<Rigidbody> ();
-
-			Destroy (this.GetComponent<CapsuleCollider> ());
-
-			hasRigidbody = true;
-		}
 
 		graphicsCookie.gameObject.tag = "Cookie";
 

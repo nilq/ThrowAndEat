@@ -18,6 +18,7 @@ TagManager:
   - AmmoText0
   - AmmoText1
   - AmmoText2
+  - CookieCounter
   layers:
   - Default
   - TransparentFX

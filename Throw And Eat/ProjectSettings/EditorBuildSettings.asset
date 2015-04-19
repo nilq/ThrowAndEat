@@ -7,3 +7,5 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Splash.unity
+  - enabled: 1
+    path: Assets/Scenes/Clean Test Version.unity

@@ -749,11 +749,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  dammage: 1
-  antiSwarmDammage: 0
+  dammage: 3
+  antiSwarmDammage: 1.5
   health: 100
   graphicsCookie: {fileID: 138204}
-  moveSpeed: 3.5
+  moveSpeed: 5
   jumpHeight: 2
   maxDistance: 100
   minDistance: 1

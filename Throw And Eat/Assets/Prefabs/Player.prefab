@@ -31,6 +31,8 @@ GameObject:
   - 114: {fileID: 11479350}
   - 114: {fileID: 11470002}
   - 114: {fileID: 11463502}
+  - 64: {fileID: 6425878}
+  - 114: {fileID: 11486580}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -56,8 +58,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187666}
-  m_LocalRotation: {x: 0, y: .994640946, z: 0, w: -.103389695}
-  m_LocalPosition: {x: .670000017, y: 0, z: 3.18000007}
+  m_LocalRotation: {x: 0, y: .760147095, z: 0, w: .649751067}
+  m_LocalPosition: {x: 48.4000015, y: 1.5, z: 112.300003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 413944}
@@ -95,6 +97,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+--- !u!64 &6425878
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 0}
 --- !u!81 &8145166
 AudioListener:
   m_ObjectHideFlags: 1
@@ -155,6 +169,26 @@ MonoBehaviour:
   mouseSensitivity: 2
   verticalRotRange: 60
   jumpHeight: 5
+--- !u!114 &11486580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4357149457dba5e4eac4b3813f2bf120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 152c78875e5c9d149890f58b93e9b8a9, type: 3}
+  - {fileID: 8300000, guid: 96adf452e80d28846baaf18940af3a80, type: 3}
+  - {fileID: 8300000, guid: 265c1fda29e41f448bb938074fb121bc, type: 3}
+  - {fileID: 8300000, guid: 250b0852a03dddb449b493a092680c27, type: 3}
+  - {fileID: 8300000, guid: 07bf988584478694686aa0fa29f1479d, type: 3}
+  - {fileID: 8300000, guid: 2c45a043046dc00449b98ddfea48cb75, type: 3}
+  - {fileID: 8300000, guid: 0645b44d9060fc544ad6581d5bddf145, type: 3}
+  - {fileID: 8300000, guid: 789a8509afcd82349b8b24a06eeaf84e, type: 3}
 --- !u!124 &12466300
 Behaviour:
   m_ObjectHideFlags: 1

@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e59aa57dada924b8cbdd22eff0506a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dammage: 20
+  dammage: 40
   decayTime: 5
 --- !u!1001 &100100000
 Prefab:

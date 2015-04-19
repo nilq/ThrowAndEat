@@ -49,47 +49,62 @@ public abstract class Throw : MonoBehaviour {
 	//The default direction
 	Vector3 dir;
 
+	SoundRandomizer soundthing;	//It's getting late, okay?
+
 	void Awake() {
 
 		ammoObject = GameObject.FindGameObjectWithTag("Ammo").GetComponent<Ammo>();
-	}
-
-	void Start () {
 
 		ammoGUI0 = GameObject.FindGameObjectWithTag("AmmoGUI0").GetComponent<RectTransform>();
 		ammoGUI1 = GameObject.FindGameObjectWithTag("AmmoGUI1").GetComponent<RectTransform>();
 		ammoGUI2 = GameObject.FindGameObjectWithTag("AmmoGUI2").GetComponent<RectTransform>();
-
+		
 		ammoText0 = GameObject.FindGameObjectWithTag("AmmoText0").GetComponent<Text>();
 		ammoText1 = GameObject.FindGameObjectWithTag("AmmoText1").GetComponent<Text>();
 		ammoText2 = GameObject.FindGameObjectWithTag("AmmoText2").GetComponent<Text>();
-
+		
 		if (projectile.gameObject.name == "Flintlock") {
-
+			
 			ammoGUI0.anchoredPosition = new Vector2(-100, 50);
 			ammoGUI1.anchoredPosition = new Vector2(-100, 999999);
 			ammoGUI2.anchoredPosition = new Vector2(-100, 999999);
-
+			
 		} else if (projectile.gameObject.name == "Valter") {
 			
 			ammoGUI1.anchoredPosition = new Vector2(-100, 50);
 			ammoGUI0.anchoredPosition = new Vector2(-100, 999999);
 			ammoGUI2.anchoredPosition = new Vector2(-100, 999999);
-
+			
 		} else if (projectile.gameObject.name == "RocketLauncher") {
 			
 			ammoGUI2.anchoredPosition = new Vector2(-250, 50);
 			ammoGUI0.anchoredPosition = new Vector2(-100, 999999);
 			ammoGUI1.anchoredPosition = new Vector2(-100, 999999);
 		}
-
+		
 		startDelay = delay;
-
+		
 		ammo = new int[4];
-
+		
 		ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
 		ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
 		ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
+	}
+
+
+
+	void Start () {
+
+		try {
+
+			soundthing = gameObject.GetComponent<SoundRandomizer>();
+			soundthing.ToString();
+
+		} catch {
+
+			Debug.LogWarning("This thing does not have a SoundRandomizer, so there won't be any sound.");
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -115,6 +130,7 @@ public abstract class Throw : MonoBehaviour {
 
 					if (ammo[0] > 0) {
 
+
 						thrown = Instantiate (projectile);
 
 						thrown.transform.position = Camera.main.transform.position;
@@ -124,6 +140,13 @@ public abstract class Throw : MonoBehaviour {
 						thrown.GetComponent<Rigidbody> ().angularVelocity = angularVelocity;
 
 						ammoObject.ammo[0] -= 1;
+						
+						ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
+						ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
+						ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
+						
+						soundthing.playRandomClip();
+
 					}
 				} else if (projectile.gameObject.name == "Valter") {
 					
@@ -142,6 +165,8 @@ public abstract class Throw : MonoBehaviour {
 						ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
 						ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
 						ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
+						
+						soundthing.playRandomClip();
 					}
 				} else if (projectile.gameObject.name == "RocketLauncher") {
 				
@@ -160,6 +185,8 @@ public abstract class Throw : MonoBehaviour {
 						ammoText0.text = "Flintlocks: " + ammoObject.ammo[0].ToString();
 						ammoText1.text = "Valters: " + ammoObject.ammo[1].ToString();
 						ammoText2.text = "Rocket Launchers: " + ammoObject.ammo[2].ToString();
+						
+						soundthing.playRandomClip();
 					}
 				}
 

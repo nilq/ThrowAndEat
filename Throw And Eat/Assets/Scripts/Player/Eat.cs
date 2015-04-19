@@ -2,11 +2,16 @@
  * Script might be put anywhere, but do remember to add reference to main camera.
 */
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Eat : MonoBehaviour {
 
+	private int cookieCounter;
+
 	private Ammo ammoComponent;
+
+	private Text counterComponent;
 
 	[Tooltip("The main camera in the scene, dumbass")]
 	public GameObject
@@ -34,13 +39,27 @@ public class Eat : MonoBehaviour {
 
 	bool chomping = false;  //Wheter or not the player is eating a cookie.
 
+	SoundRandomizer soundthing;
+
 	int layerMask;
 
 	// Use this for initialization
 	void Start () {
 
+		counterComponent = GameObject.FindGameObjectWithTag("CookieCounter").GetComponent<Text>();
+
 		ammoComponent = GameObject.FindGameObjectWithTag("Ammo").GetComponent<Ammo>();
 		layerMask = ~(1 << 9);	//All layers except nr. 9, the player; hopefully
+
+		try{
+			soundthing = gameObject.GetComponent<SoundRandomizer>();
+		}catch{
+			Debug.LogWarning("This thing does not have a SoundRandomizer, so there won't be any sound.");
+		}
+
+		counterComponent.text = "People Eaten: " + cookieCounter;
+
+		StartCoroutine("regenerateFlintlocks");
 	}
 	
 	// Update is called once per frame
@@ -56,6 +75,10 @@ public class Eat : MonoBehaviour {
 					chomping = true;
 					StartCoroutine ("eatGingerbread");
 					Destroy (hit.collider.gameObject);
+
+					cookieCounter++;
+
+					counterComponent.text = "People Eaten: " + cookieCounter;
 				}
 			}
 		}
@@ -73,22 +96,30 @@ public class Eat : MonoBehaviour {
 			
 			ammoComponent.ammo[1] += 10;
 			
-		} else if (Random.Range(0, 2) == 2) {
-			
-			ammoComponent.ammo[2] += 10;		
+		}
+
+		if (Random.Range(0, 3) == 0) {
+
+			ammoComponent.ammo[2]++;
 		}
 
 		for (int i = (int)eatTime*10; i > 0; i -= 2) {  //Wait for eatTime and spawn breadcrubms meanwhile
 
-			//TODO: Sound effect
 			Instantiate (breadcrumbs, mainCamera.transform.position, mainCamera.transform.localRotation);
 			yield return new WaitForSeconds (0.2f);
-
+			soundthing.playRandomClip();
 			if (player.GetComponent<PlayerHealth> ().health < 100) {
 				player.GetComponent<PlayerHealth> ().health += (healthHealed * (0.2f / eatTime));
 			}
 		}
 		player.GetComponent<Controller> ().canMove = true;
 		chomping = false;
+	}
+
+	IEnumerator regenerateFlintlocks(){
+		while (true){
+			yield return new WaitForSeconds (4);
+			ammoComponent.ammo[0] += 1;
+		}
 	}
 }

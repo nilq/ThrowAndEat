@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour {
 
 		health -= dammage;
 
+		healthBar.transform.localScale = new Vector3(health * 0.01F, transform.localScale.y, transform.localScale.z);
+
 		if (health <= 0) {
 
 			Application.LoadLevel(Application.loadedLevel);
