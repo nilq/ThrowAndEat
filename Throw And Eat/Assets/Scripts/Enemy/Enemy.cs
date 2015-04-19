@@ -38,7 +38,6 @@ public class Enemy : MonoBehaviour
 
 	void OnControllerColliderHit (ControllerColliderHit other)
 	{
-
 		if (other.gameObject.tag == "Player") {
 			
 			other.gameObject.BroadcastMessage ("doDammage", dammage, SendMessageOptions.DontRequireReceiver);

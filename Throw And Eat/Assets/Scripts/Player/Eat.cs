@@ -7,6 +7,8 @@ using System.Collections;
 public class Eat : MonoBehaviour
 {
 
+	private Ammo ammoComponent;
+
 	[Tooltip("The main camera in the scene, dumbass")]
 	public GameObject
 		mainCamera;
@@ -33,10 +35,13 @@ public class Eat : MonoBehaviour
 
 	bool chomping = false;  //Wheter or not the player is eating a cookie.
 
+	int layerMask;
+
 	// Use this for initialization
 	void Start ()
 	{
-	
+		ammoComponent = GameObject.FindGameObjectWithTag("Ammo").GetComponent<Ammo>();
+		layerMask = ~(1 << 9);	//All layers except nr. 9, the player; hopefully
 	}
 	
 	// Update is called once per frame
@@ -46,7 +51,7 @@ public class Eat : MonoBehaviour
 			RaycastHit hit;
 
 			Ray screenMiddle = new Ray (mainCamera.transform.position, mainCamera.transform.forward);
-			if (Physics.Raycast (screenMiddle, out hit, maxDist)) {
+			if (Physics.Raycast (screenMiddle, out hit, maxDist, layerMask)) {
 
 				if (chomping == false && hit.collider.gameObject.tag == "Cookie") {
 					chomping = true;
@@ -60,6 +65,31 @@ public class Eat : MonoBehaviour
 	IEnumerator eatGingerbread ()
 	{
 		player.GetComponent<Controller> ().canMove = false;
+
+		if (Random.Range(0, 3) == 0) {
+			
+			Debug.Log("0!");
+			
+			ammoComponent.ammo[0] += 10;
+			
+		} else if (Random.Range(0, 3) == 1) {
+			
+			Debug.Log("1!");
+			
+			ammoComponent.ammo[1] += 10;
+			
+		} else if (Random.Range(0, 3) == 2) {
+			
+			Debug.Log("2!");
+			
+			ammoComponent.ammo[2] += 10;
+			
+		} else if (Random.Range(0, 3) == 3) {
+			
+			Debug.Log("3!");
+			
+			ammoComponent.ammo[3] += 10;
+		}
 
 		for (int i = (int)eatTime*10; i > 0; i -= 2) {  //Wait for eatTime and spawn breadcrubms meanwhile
 			//TODO: Sound effect

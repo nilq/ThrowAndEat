@@ -10,7 +10,14 @@ public class AmmoPickup : MonoBehaviour {
 		ammoObject = GameObject.FindGameObjectWithTag("Ammo").GetComponent<Ammo>();
 	}
 
-	void OnCollisionEnter(Collision other) {
+	void OnControllerColliderHit (ControllerColliderHit other)
+	{
+		Debug.Log("OSTDYUASHBDHUBSDFNSOFNSJFNSOnsdaoaifnfsnafoidsfjnvdasofondisfndisofndsif");
+	}
+
+	/*void OnControllerColliderHit(ControllerColliderHit other) {
+
+		Debug.Log ("There was a collision: "+ other.transform);
 
 		if (other.gameObject.tag == "Player") {
 
@@ -57,5 +64,5 @@ public class AmmoPickup : MonoBehaviour {
 				Destroy(this.gameObject);
 			}
 		}
-	}	
+	}	*/
 }
