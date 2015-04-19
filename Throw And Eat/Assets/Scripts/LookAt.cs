@@ -6,7 +6,6 @@ public class LookAt : MonoBehaviour {
 	public GameObject target;
 
 	void Update () {
-
-		transform.LookAt(target.transform.position);
+		transform.LookAt(target.transform);
 	}
 }
