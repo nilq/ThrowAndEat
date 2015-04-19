@@ -12,6 +12,12 @@ TagManager:
   - Ammo2
   - Ammo3
   - Ammo
+  - AmmoGUI0
+  - AmmoGUI1
+  - AmmoGUI2
+  - AmmoText0
+  - AmmoText1
+  - AmmoText2
   layers:
   - Default
   - TransparentFX

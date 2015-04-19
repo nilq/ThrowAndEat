@@ -4,8 +4,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Eat : MonoBehaviour
-{
+public class Eat : MonoBehaviour {
 
 	private Ammo ammoComponent;
 
@@ -38,15 +37,15 @@ public class Eat : MonoBehaviour
 	int layerMask;
 
 	// Use this for initialization
-	void Start ()
-	{
+	void Start () {
+
 		ammoComponent = GameObject.FindGameObjectWithTag("Ammo").GetComponent<Ammo>();
 		layerMask = ~(1 << 9);	//All layers except nr. 9, the player; hopefully
 	}
 	
 	// Update is called once per frame
-	void Update ()
-	{
+	void Update () {
+
 		if (Input.GetButtonDown ("Fire2")) {
 			RaycastHit hit;
 
@@ -62,36 +61,25 @@ public class Eat : MonoBehaviour
 		}
 	}
 
-	IEnumerator eatGingerbread ()
-	{
+	IEnumerator eatGingerbread () {
+
 		player.GetComponent<Controller> ().canMove = false;
 
-		if (Random.Range(0, 3) == 0) {
-			
-			Debug.Log("0!");
+		if (Random.Range(0, 2) == 0) {
 			
 			ammoComponent.ammo[0] += 10;
 			
-		} else if (Random.Range(0, 3) == 1) {
-			
-			Debug.Log("1!");
+		} else if (Random.Range(0, 2) == 1) {
 			
 			ammoComponent.ammo[1] += 10;
 			
-		} else if (Random.Range(0, 3) == 2) {
+		} else if (Random.Range(0, 2) == 2) {
 			
-			Debug.Log("2!");
-			
-			ammoComponent.ammo[2] += 10;
-			
-		} else if (Random.Range(0, 3) == 3) {
-			
-			Debug.Log("3!");
-			
-			ammoComponent.ammo[3] += 10;
+			ammoComponent.ammo[2] += 10;		
 		}
 
 		for (int i = (int)eatTime*10; i > 0; i -= 2) {  //Wait for eatTime and spawn breadcrubms meanwhile
+
 			//TODO: Sound effect
 			Instantiate (breadcrumbs, mainCamera.transform.position, mainCamera.transform.localRotation);
 			yield return new WaitForSeconds (0.2f);
