@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{22A77A71-0482-1442-00F1-34785C02AEE3}") = "Throw And Eat", "Assembly-CSharp.csproj", "{161FFA51-C4E9-74B9-5CEE-0224006A9C8E}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throw And Eat", "Assembly-CSharp.csproj", "{161FFA51-C4E9-74B9-5CEE-0224006A9C8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,5 +38,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal
