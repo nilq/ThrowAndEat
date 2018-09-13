@@ -17,10 +17,8 @@ public class SoundRandomizer : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		try {
-			speaker = gameObject.GetComponent<AudioSource> ();
-			speaker.CompareTag("Fish");	//Simple way to provoke an error.
-		} catch {
+		speaker = gameObject.GetComponent<AudioSource> ();
+		if(speaker==null){
 			speaker = gameObject.AddComponent<AudioSource> ();
 			speaker.playOnAwake = false;
 		}
