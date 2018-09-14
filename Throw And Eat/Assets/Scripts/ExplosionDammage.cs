@@ -26,9 +26,11 @@ public class ExplosionDammage : MonoBehaviour {
 
 				foreach(Collider c in colliders) {
 
-					if (c.gameObject.GetComponentInParent<CharacterController>() != null) {
+					Enemy enemyComponent = c.gameObject.GetComponentInParent<Enemy>();
 
-						c.gameObject.GetComponentInParent<Enemy>().doDamage(damage);
+					if (enemyComponent != null) {
+
+						enemyComponent.doDamage(damage);
 
 					} else {
 
@@ -38,13 +40,13 @@ public class ExplosionDammage : MonoBehaviour {
 
 				Instantiate(explosion, transform.position, Quaternion.identity);
 
-				Destroy(this.gameObject);
+				Destroy(this.gameObject, delay);
 			}
 		}
 	}
 
 	void OnCollisionEnter(Collision other) {
-
-		isExploding = true;
+		if(other.gameObject.tag != "Player")
+			isExploding = true;
 	}
 }
