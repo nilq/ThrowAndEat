@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 6543892}
   m_Layer: 0
   m_Name: Graphics
-  m_TagString: Cookie
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 11425980}
   - component: {fileID: 13630902}
   m_Layer: 0
-  m_Name: Enemy 10
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181074}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -11.59, z: 0}
+  m_LocalPosition: {x: 0, y: 1.36, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: -0.03}
   m_Children: []
   m_Father: {fileID: 489696}
@@ -367,8 +367,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176002}
-  m_LocalRotation: {x: 0, y: 0.9387694, z: 0, w: 0.34454623}
-  m_LocalPosition: {x: 29.696, y: 1.2005404, z: 24.087158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 53.76, y: 3.05, z: 110.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453084}
@@ -835,10 +835,11 @@ MonoBehaviour:
   antiSwarmDammage: 0
   health: 100
   graphicsCookie: {fileID: 128912}
-  moveSpeed: 0
-  jumpHeight: 3
+  moveSpeed: 4
+  jumpHeight: 1.5
   maxDistance: 100
   minDistance: 1
+  disableRigidbodyThreshold: 0.1
   healthBar: {fileID: 181074}
   target: {fileID: 0}
   dieParticle: {fileID: 137426, guid: 30f224fc0116f714e85533436123e7a7, type: 2}
@@ -933,7 +934,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 176002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1

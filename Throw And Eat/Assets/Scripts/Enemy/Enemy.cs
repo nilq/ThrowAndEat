@@ -3,10 +3,6 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	private bool shallHaveRigidbody = true;
-
-	private bool hasRigidbody = false;
-
 	private float verticalVel = 0;
 
 	private Quaternion rotation;
@@ -17,6 +13,8 @@ public class Enemy : MonoBehaviour {
 
 	private CharacterController characterController;
 
+	private Rigidbody rigidBody;
+
 	public bool isDead = false;
 
 	public float dammage;
@@ -25,13 +23,19 @@ public class Enemy : MonoBehaviour {
 
 	public float health = 5.0F;
 
+	[Tooltip("The part of the enemy that stays behind as a delicious cookie when it dies.")]
 	public GameObject graphicsCookie;
 
 	public float moveSpeed;
 	public float jumpHeight;
 
+	[Tooltip("Maximum chase distance")]
 	public float maxDistance;
+	[Tooltip("Minimum chase distance. Respect personal space.")]
 	public float minDistance;
+
+	[Tooltip("If velocity is less than value, remove rigidbody.")]
+	public float disableRigidbodyThreshold = 0.3f;
 
 	public GameObject healthBar;
 
@@ -46,62 +50,43 @@ public class Enemy : MonoBehaviour {
 			other.gameObject.BroadcastMessage ("doDammage", (dammage * 4) * Time.deltaTime, SendMessageOptions.DontRequireReceiver);
 
 			doDamage((antiSwarmDammage * 30) * Time.deltaTime);
-		}
-	}
-
-	void OnCollisionEnter (Collision other) {
-
-		if (other.gameObject.tag == "DefaultWeapon") {
+		} 
+		else if (other.gameObject.tag == "DefaultWeapon") {
 			
 			doDamage (other.gameObject.GetComponent<ThrownProjectile> ().dammage);
 
 			other.gameObject.tag = "Untagged";
 		}
-
-		if (other.gameObject.tag != "Enemy") {
-
-			if (other.gameObject.tag != "Cookie") {
-
-				if (shallHaveRigidbody) {
-
-					if (hasRigidbody) {
-						
-						Destroy(this.GetComponent<Rigidbody>());
-						
-						hasRigidbody = false;
-					}
-				}
-			}
-		}
 	}
 
-	void Awake () {
+	void OnCollisionEnter (Collision other) {
+	}
+
+	void Start () {
 
 		target = GameObject.FindGameObjectWithTag("Player");
 	
 		characterController = GetComponent<CharacterController> ();
-
-		if (!hasRigidbody) {
-
-			if (shallHaveRigidbody) {
-
-				this.gameObject.AddComponent<Rigidbody> ();
-
-				hasRigidbody = true;
-			}
-		}
 	}
 
 	void Update () {
 
 		healthBar.gameObject.BroadcastMessage ("setHealth", health, SendMessageOptions.DontRequireReceiver);
 
-		move ();
+		if (!isDead) {
+			move ();
+		}
+		else if(rigidBody!=null && rigidBody.velocity.normalized.magnitude < disableRigidbodyThreshold){
+			Destroy(rigidBody);
+		}
 	}
 
 	public void doDamage (float dammage) {
 
 		health -= dammage;
+
+		//Health bar shows up first time it is damaged
+		healthBar.SetActive (true);
 
 		if (health <= 0) {
 
@@ -113,77 +98,49 @@ public class Enemy : MonoBehaviour {
 
 		distance = Vector3.Distance (target.transform.position, this.transform.position);
 
-		if (!isDead) {
+		characterController.enabled = true;
 
-			graphicsCookie.gameObject.tag = "Untagged";
-
-			if (hasRigidbody) {
-
-				if (!shallHaveRigidbody) {
-
-					Destroy(GetComponent<Rigidbody> ());
-					
-					hasRigidbody = false;
-				}
-			}
-
-			characterController.enabled = true;
-
-			healthBar.SetActive (true);
-
-			if (distance < maxDistance) {
-				
-				if (characterController.isGrounded) {
-					
-					verticalVel = jumpHeight;
-				}
-				
-				rotation = Quaternion.LookRotation (target.transform.position - transform.position);
-				
-				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, moveSpeed * Time.deltaTime);
-				
-				verticalVel += Physics.gravity.y * Time.deltaTime;		
-				
-				if (distance > minDistance) {
-					
-					speed = new Vector3 (0, verticalVel, moveSpeed);
-					
-				} else {
-					
-					speed = new Vector3 (0, verticalVel, 0);
-				}
-				
-				speed = transform.rotation * speed;
-				
-				characterController.Move (speed * Time.deltaTime);
+		if (distance < maxDistance) {
 			
+			if (characterController.isGrounded) {
+				verticalVel = jumpHeight;
 			}
-		} else {
+			
+			rotation = Quaternion.LookRotation (target.transform.position - transform.position);
+			
+			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, moveSpeed * Time.deltaTime);
+			
+			verticalVel += Physics.gravity.y * Time.deltaTime;	
+			
+			if (distance > minDistance) {
+				
+				speed = new Vector3 (0, verticalVel, moveSpeed);
+				
+			} else {
+				
+				speed = new Vector3 (0, verticalVel, 0);
+			}
+			
+			speed = transform.rotation * speed;
 
-			healthBar.SetActive (false);
-
-			verticalVel += Physics.gravity.y * Time.deltaTime;
-
-			speed = new Vector3 (0, verticalVel, 0);
+			Debug.Log("*Angry cookie noises* " + speed );
+			
+			characterController.Move (speed * Time.deltaTime);
+		
 		}
 	}
 
 	void die () {
 
+		healthBar.SetActive(false);
+
 		isDead = true;
 
-		shallHaveRigidbody = true;
-
-		this.gameObject.AddComponent<Rigidbody> ();
-
-		Destroy (this.GetComponent<CapsuleCollider> ());
-		
-		hasRigidbody = true;
-
-		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (-90, transform.rotation.y, 0), moveSpeed * Time.deltaTime);
+		rigidBody = this.gameObject.AddComponent<Rigidbody> ();
 
 		characterController.enabled = false;
 
+		//Become edible
 		graphicsCookie.gameObject.tag = "Cookie";
 
 		Instantiate (dieParticle, transform.position, Quaternion.identity);
