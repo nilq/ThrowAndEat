@@ -367,8 +367,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.76, y: 3.05, z: 110.13}
+  m_LocalRotation: {x: -0, y: 0.80483645, z: -0, w: 0.5934967}
+  m_LocalPosition: {x: 65.37, y: 3.05, z: 112.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 453084}
@@ -376,7 +376,7 @@ Transform:
   - {fileID: 434628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 107.189, z: 0}
 --- !u!4 &491572
 Transform:
   m_ObjectHideFlags: 1
@@ -831,12 +831,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  dammage: 1
-  antiSwarmDammage: 0
+  dammage: 20
+  antiSwarmDammage: 50
   health: 100
   graphicsCookie: {fileID: 128912}
   moveSpeed: 4
-  jumpHeight: 1.5
+  jumpHeight: 2.5
   maxDistance: 100
   minDistance: 1
   disableRigidbodyThreshold: 0.1

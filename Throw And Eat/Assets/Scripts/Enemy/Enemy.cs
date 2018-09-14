@@ -47,9 +47,9 @@ public class Enemy : MonoBehaviour {
 
 		if (other.gameObject.tag == "Player") {
 			
-			other.gameObject.BroadcastMessage ("doDammage", (dammage * 4) * Time.deltaTime, SendMessageOptions.DontRequireReceiver);
+			other.gameObject.BroadcastMessage ("doDammage", dammage * Time.deltaTime, SendMessageOptions.DontRequireReceiver);
 
-			doDamage((antiSwarmDammage * 30) * Time.deltaTime);
+			doDamage((antiSwarmDammage) * Time.deltaTime);
 		} 
 		else if (other.gameObject.tag == "DefaultWeapon") {
 			
@@ -83,10 +83,13 @@ public class Enemy : MonoBehaviour {
 
 	public void doDamage (float dammage) {
 
-		health -= dammage;
+		if(isDead)
+			return;
 
 		//Health bar shows up first time it is damaged
 		healthBar.SetActive (true);
+
+		health -= dammage;
 
 		if (health <= 0) {
 
@@ -122,8 +125,6 @@ public class Enemy : MonoBehaviour {
 			}
 			
 			speed = transform.rotation * speed;
-
-			Debug.Log("*Angry cookie noises* " + speed );
 			
 			characterController.Move (speed * Time.deltaTime);
 		
