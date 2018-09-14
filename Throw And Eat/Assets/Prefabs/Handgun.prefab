@@ -5,14 +5,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 418450}
-  - 33: {fileID: 3303468}
-  - 65: {fileID: 6541184}
-  - 23: {fileID: 2312290}
-  - 54: {fileID: 5426932}
-  - 114: {fileID: 11437058}
+  - component: {fileID: 418450}
+  - component: {fileID: 3303468}
+  - component: {fileID: 6541184}
+  - component: {fileID: 2312290}
+  - component: {fileID: 5426932}
+  - component: {fileID: 11437058}
   m_Layer: 0
   m_Name: Handgun
   m_TagString: Untagged
@@ -27,11 +27,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.09200001, y: .980000019, z: -8.88599968}
-  m_LocalScale: {x: .150000006, y: .300000012, z: .150000006}
+  m_LocalPosition: {x: -1.092, y: 0.98, z: -8.886}
+  m_LocalScale: {x: 0.15, y: 0.3, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2312290
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -41,20 +42,30 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 776e58bccb5677b429f881c2b1e0fc72, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3303468
 MeshFilter:
@@ -101,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e59aa57dada924b8cbdd22eff0506a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  dammage: 30
   decayTime: 5
 --- !u!1001 &100100000
 Prefab:
