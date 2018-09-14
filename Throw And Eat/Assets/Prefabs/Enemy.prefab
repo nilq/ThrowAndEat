@@ -39,7 +39,6 @@ GameObject:
   m_Component:
   - component: {fileID: 486834}
   - component: {fileID: 3359544}
-  - component: {fileID: 13502230}
   - component: {fileID: 2373070}
   m_Layer: 0
   m_Name: Pupil
@@ -57,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 423648}
   - component: {fileID: 3343736}
-  - component: {fileID: 13538388}
   - component: {fileID: 2394792}
   m_Layer: 0
   m_Name: Pupil
@@ -94,7 +92,6 @@ GameObject:
   m_Component:
   - component: {fileID: 422090}
   - component: {fileID: 3374422}
-  - component: {fileID: 13592210}
   - component: {fileID: 2373062}
   - component: {fileID: 11462676}
   m_Layer: 0
@@ -145,7 +142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 425800}
   - component: {fileID: 3380806}
-  - component: {fileID: 13520832}
   - component: {fileID: 2328154}
   - component: {fileID: 11448828}
   m_Layer: 0
@@ -878,54 +874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a74422f04a8e24f9546eb3df97186d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &13502230
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13520832
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13538388
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123144}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13592210
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129698}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13630902
 CapsuleCollider:
   m_ObjectHideFlags: 1
