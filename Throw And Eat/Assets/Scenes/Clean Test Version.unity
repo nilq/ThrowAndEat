@@ -1471,6 +1471,10 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 297887953}
+    - target: {fileID: 11463502, guid: e87a5cbf8d1277a4698ef512f7259268, type: 2}
+      propertyPath: eatTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e87a5cbf8d1277a4698ef512f7259268, type: 2}
   m_IsPrefabParent: 0
@@ -3705,7 +3709,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489696, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.80483645
+      value: 0.74441737
       objectReference: {fileID: 0}
     - target: {fileID: 489696, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
       propertyPath: m_LocalRotation.z
@@ -3713,11 +3717,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489696, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.5934967
+      value: -0.66771466
       objectReference: {fileID: 0}
     - target: {fileID: 489696, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489696, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 263.78198
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
@@ -5418,10 +5426,6 @@ Prefab:
     - target: {fileID: 176002, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
       propertyPath: m_Name
       value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 489696, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 147.03601
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b3d11b9d938e9a4e9fffd2c9ce302ea, type: 2}
